@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-radio {
+	@apply border-2 w-4 h-4 relative text-transparent cursor-pointer;
+}
+
+.custom-radio:checked {
+	@apply border-contact-form-green-600 border;
+}
+
+.custom-radio:focus {
+	@apply outline-none ring-contact-form-green-600 ring-offset-0; /* Elimina el círculo exterior al hacer focus */
+}
+
+.custom-radio:hover {
+	@apply outline-none ring-contact-form-green-600 ring-offset-0; /* Elimina el círculo exterior al hacer hover */
+}
+
+.custom-radio:checked::before {
+	content: "";
+	@apply w-2 h-2 bg-contact-form-green-600 rounded-full absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Centra el círculo interior */
+}
+
+.custom-checkbox {
+	@apply text-contact-form-green-600;
+}
+
+.custom-checkbox:checked {
+	@apply bg-contact-form-green-600;
+}
+
+.custom-checkbox:focus {
+	@apply outline-4 outline-contact-form-green-600 ring-contact-form-green-600;
+}
+
+.custom-checkbox:hover {
+	@apply outline-none ring-offset-0;
+}
+
+@layer components {
+	.checkbox-label:has(input:checked) {
+		@apply border-contact-form-idle bg-contact-form-green-200;
+	}
+}

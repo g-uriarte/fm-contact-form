@@ -1,0 +1,105 @@
+import { FC } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { ContactFormSchema, QueryTypeRadioOptions, contactFormZodResolver } from '../../types/contactForm'
+import { Input } from '../Input/Input'
+import { Checkbox } from '../Input/Checkbox'
+import { RadioGroup } from '../Input/RadioGroup'
+import { TextArea } from '../Input/TextArea'
+
+type ContactFormProps = {
+
+}
+
+export const ContactForm: FC<ContactFormProps> = ({ }) => {
+
+    const { handleSubmit, control, setValue } = useForm<ContactFormSchema>({
+        resolver: contactFormZodResolver,
+        mode: 'onSubmit'
+    });
+
+    const onSubmit: SubmitHandler<ContactFormSchema> = (data) => {
+        console.log(data);
+    }
+
+    return (
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
+            <h1 className='text-4xl font-bold text-contact-form-grey-900'>Contact Us</h1>
+            <div className='flex flex-col gap-4 xl:flex-row xl:flex-1' >
+                <div className='flex flex-col gap-1 xl:flex-1' >
+                    <Input
+                        name='firstName'
+                        type='text'
+                        id='firstname'
+                        label='First name'
+                        isRequired
+                        control={control}
+                    />
+                </div>
+                <div className='flex flex-col gap-1 xl:flex-1'>
+                    <Input
+                        name='lastName'
+                        type='text'
+                        id='lastname'
+                        label='Last name'
+                        isRequired
+                        control={control}
+                    />
+                </div>
+            </div>
+            <div>
+                <div className='flex flex-col gap-1' >
+                    <Input
+                        name='email'
+                        type='email'
+                        id='email'
+                        label='Email Address'
+                        isRequired
+                        control={control}
+                    />
+                </div>
+            </div>
+            <div>
+                <div className='flex flex-col gap-3'>
+                    <RadioGroup
+                        name='queryType'
+                        isRequired
+                        control={control}
+                        options={QueryTypeRadioOptions}
+                    />
+                </div>
+            </div>
+            <div>
+                <div className='flex flex-col gap-1' >
+                    <TextArea
+                        name='message'
+                        isRequired
+                        id='message'
+                        label='Message'
+                        control={control}
+                    />
+                </div>
+            </div>
+            <div>
+                <div className='flex flex-col gap-1'>
+                    <Checkbox
+                        name='consentContactByTheTeam'
+                        id='consent'
+                        label='I consent to being contacted by the team'
+                        isRequired
+                        control={control}
+                        rules={{
+                            onChange: (e) => {
+                                setValue('consentContactByTheTeam', e.target.value ? 'true' : 'false')
+                            }
+                        }}
+                    />
+                </div>
+            </div>
+            <button
+                type='submit'
+                className='h-14 w-full font-semibold text-white bg-contact-form-green-600 rounded-md'>
+                Submit
+            </button>
+        </form>
+    )
+}
