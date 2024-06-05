@@ -14,7 +14,7 @@ type ContactFormProps = {
 
 export const ContactForm: FC<ContactFormProps> = ({ }) => {
 
-    const { handleSubmit, control, setValue, formState } = useForm<ContactFormSchema>({
+    const { handleSubmit, control, setValue } = useForm<ContactFormSchema>({
         resolver: contactFormZodResolver,
         mode: 'onSubmit'
     });
