@@ -26,8 +26,8 @@ export const ContactForm: FC<ContactFormProps> = ({ }) => {
                 position: 'top-center',
                 unstyled: true,
                 classNames: {
-                    toast: 'bg-contact-form-grey-900 p-4 rounded-md w-[380px]',
-                }
+                    toast: 'bg-contact-form-grey-900 p-4 rounded-md xl:w-[380px]',
+                },
             });
         }
     }
