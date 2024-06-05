@@ -1,10 +1,12 @@
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { ContactFormSchema, QueryTypeRadioOptions, contactFormZodResolver } from '../../types/contactForm'
+import { ContactFormSchema, QueryTypeRadioOptions, checkForm, contactFormZodResolver } from '../../types/contactForm'
 import { Input } from '../Input/Input'
 import { Checkbox } from '../Input/Checkbox'
 import { RadioGroup } from '../Input/RadioGroup'
 import { TextArea } from '../Input/TextArea'
+import { toast } from 'sonner'
+import { ToastContent } from '../Toast/ToastContent'
 
 type ContactFormProps = {
 
@@ -12,13 +14,22 @@ type ContactFormProps = {
 
 export const ContactForm: FC<ContactFormProps> = ({ }) => {
 
-    const { handleSubmit, control, setValue } = useForm<ContactFormSchema>({
+    const { handleSubmit, control, setValue, formState } = useForm<ContactFormSchema>({
         resolver: contactFormZodResolver,
         mode: 'onSubmit'
     });
 
     const onSubmit: SubmitHandler<ContactFormSchema> = (data) => {
-        console.log(data);
+        const result = checkForm(data);
+        if (result.success) {
+            toast(<ToastContent title='Message Sent!' message="Thanks for completing the form. We'll be in touch soon!" />, {
+                position: 'top-center',
+                unstyled: true,
+                classNames: {
+                    toast: 'bg-contact-form-grey-900 p-4 rounded-md w-[380px]',
+                }
+            });
+        }
     }
 
     return (

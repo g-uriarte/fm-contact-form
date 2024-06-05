@@ -30,7 +30,6 @@ export const RadioGroup = <KEnum extends string, T extends RadioOption<KEnum>,>(
                             value={value}
                             type='radio'
                             id={id}
-                            onFocus={() => { console.log('focus') }}
                         />
                         <label
                             htmlFor={id}

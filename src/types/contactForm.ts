@@ -44,3 +44,4 @@ export type ContactFormSchema = z.infer<typeof formSchema>;
 export type ControlledPropsContactForm = UseControllerProps<ContactFormSchema>;
 
 export const contactFormZodResolver = zodResolver(formSchema);
+export const checkForm = formSchema.safeParse;

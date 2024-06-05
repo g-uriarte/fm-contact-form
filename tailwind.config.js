@@ -12,7 +12,8 @@ export default {
 			backgroundColor: {
 				'contact-form-white': 'hsl(0, 0%, 100%)',
 				'contact-form-green-200': 'hsl(148, 38%, 91%)',
-				'contact-form-green-600': 'hsl(169, 82%, 27%)'
+				'contact-form-green-600': 'hsl(169, 82%, 27%)',
+				'contact-form-grey-900': 'hsl(187, 24%, 22%)',
 			},
 			textColor: {
 				'contact-form-green-600': 'hsl(169, 82%, 27%)',
