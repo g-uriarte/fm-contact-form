@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Contact form solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj).
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-## Expanding the ESLint configuration
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Overview
 
-- Configure the top-level `parserOptions` property like this:
+### The challenge
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Users should be able to:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Complete the form and see a success toast message upon successful submission
+- Receive form validation messages if:
+  - A required field has been missed
+  - The email address is not formatted correctly
+- Complete the form only using their keyboard
+- Have inputs, error messages, and the success message announced on their screen reader
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+
+### Screenshot
+
+<div style="display: flex;">
+<div style="display: flex; flex: 3; flex-direction: column">
+  <p align="center">Contact Form (Desktop view)</p>
+  <p align="center">
+    <img src="./screenshots/screenshot_desktop.png" />
+  </p>
+</div>
+<div style="display: flex; flex: 1; flex-direction: column">
+  <p align="center" >Contact Form (mobile view)</p>
+  <p align="center">
+    <img src="./screenshots/screenshot_mobile.png" />
+  </p>
+</div>
+</div>
+
+### Links
+
+- Solution URL: [Contact form](https://g-uriarte.github.io/fm-contact-form/)
+- Live Site URL: [Contact form](https://g-uriarte.github.io/fm-contact-form/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- Flexbox
+- [React](https://reactjs.org/) - JS library
+- Typescript
+- [Taildwindcss](https://tailwindcss.com/) - For styles
+
+## Author
+
+- Frontend Mentor - [@g-uriarte](https://www.frontendmentor.io/profile/g-uriarte)
